@@ -41,17 +41,20 @@ int main()
     {
 
         printf("\nBienvenido a la calculadora :)\n");
-        printf("\nIngrese el primer operando : \n");
+        printf("\nEste es el menu de opciones :\n");
+
+        printf("\nIngrese el primero operando : \n");
         scanf("%d", &operando1);
-        printf("\nIngrese el segundo operando : \n");
+        printf("\nIngres el segundo operando : \n");
         scanf("%d", &operando2);
 
-        printf("\nEste es el menu de opciones :\n");
-        printf("\nPara realizar la suma ingrese : A\n");
-        printf("\nPara realizar la resta ingrese : B \n");
-        printf("\nPara realizar la division ingrese : C \n");
-        printf("\nPara realizar la multiplicacion : D \n");
-        printf("\nPara realizar el factorial de los operandos ingrese : E\n");
+
+        printf("\nPara realizar solo la suma ingrese : A\n");
+        printf("\nPara realizar  solo la resta ingrese : B \n");
+        printf("\nPara realizar  solo la division ingrese : C \n");
+        printf("\nPara realizar solo la multiplicacion : D \n");
+        printf("\nPara realizar solo el factorial de los operandos ingrese : E\n");
+        printf("\nPara realizar TODAS LAS OPERACIONES INGRESE : X\n");
         printf("\n SALIR : F \n ");
 
         fflush(stdin);
@@ -59,9 +62,13 @@ int main()
 
         switch(opciones)
         {
+
+
+
+
         case'A' :
 
-                resultado = suma(operando1,operando2);
+            resultado = suma(operando1,operando2);
             printf("\nEl resultado de %d + %d es : %d",operando1, operando2, resultado );
             break;
 
@@ -93,6 +100,37 @@ int main()
             break;
 
         case 'E' :
+
+            resultado = factorial1(operando1);
+            printf("\nEl resultado de !%d es : %d",operando1,  resultado );
+
+            resultado = factorial2(operando2);
+            printf("\nEl resultado de !%d es : %d",operando2,  resultado );
+            break;
+
+        case 'X':
+
+            resultado = suma(operando1,operando2);
+            printf("\nEl resultado de %d + %d es : %d",operando1, operando2, resultado );
+
+            resultado = resta(operando1,operando2);
+            printf("\nEl resultado de %d - %d es : %d",operando1, operando2, resultado );
+
+             if (operando2 == 0)
+            {
+                printf("\nNo se puede dividir por 0!!!\n");
+
+            }
+            else
+            {
+
+                resultadoD = division(operando1,operando2);
+                printf("\nEl resultado de %d / %d es : %.2f",operando1, operando2, resultadoD );
+
+            }
+
+            resultado = multiplicacion(operando1,operando2);
+            printf("\nEl resultado de %d * %d es : %d",operando1, operando2, resultado );
 
             resultado = factorial1(operando1);
             printf("\nEl resultado de !%d es : %d",operando1,  resultado );
